@@ -1,0 +1,3 @@
+
+rootProject.name = "KakaoLink-kt"
+
