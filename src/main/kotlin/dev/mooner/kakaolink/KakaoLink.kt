@@ -122,6 +122,7 @@ class KakaoLink(
         isLoggedIn = true
     }
 
+    @KakaoLinkDsl
     suspend fun sendLink(room: String, type: String, builder: KakaoLinkObjectBuilder.() -> Unit) {
         require(isLoggedIn) { "You can't access the KakaoLink API before logging in. Use login() first." }
 

@@ -6,6 +6,7 @@
 
 package dev.mooner.kakaolink.entity.link.template.`object`
 
+import dev.mooner.kakaolink.KakaoLinkDsl
 import kotlinx.serialization.SerialName
 import kotlin.properties.Delegates.notNull
 
@@ -27,12 +28,14 @@ class TemplateObjectBuilder {
 
     private var content: TemplateContent by notNull()
 
+    @KakaoLinkDsl
     fun content(builder: TemplateContentBuilder.() -> Unit) {
         content = TemplateContentBuilder().apply(builder).build()
     }
 
     private var buttons: MutableList<TemplateButton> = arrayListOf()
 
+    @KakaoLinkDsl
     fun buttons(builder: TemplateButtonListBuilder.() -> Unit) {
         buttons = TemplateButtonListBuilder().apply(builder).build()
     }

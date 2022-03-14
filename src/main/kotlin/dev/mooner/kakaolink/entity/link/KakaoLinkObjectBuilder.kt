@@ -6,6 +6,7 @@
 
 package dev.mooner.kakaolink.entity.link
 
+import dev.mooner.kakaolink.KakaoLinkDsl
 import dev.mooner.kakaolink.entity.link.template.`object`.TemplateObject
 import dev.mooner.kakaolink.entity.link.template.`object`.TemplateObjectBuilder
 import dev.mooner.kakaolink.entity.link.template.args.TemplateArgsBuilder
@@ -23,6 +24,7 @@ class KakaoLinkObjectBuilder {
     @SerialName("template_args")
     private var templateArgs: Map<String, String>? = null
 
+    @KakaoLinkDsl
     fun templateArgs(builder: TemplateArgsBuilder.() -> Unit) {
         templateArgs = TemplateArgsBuilder().apply(builder).build()
     }
@@ -30,6 +32,7 @@ class KakaoLinkObjectBuilder {
     @SerialName("template_object")
     private var templateObject: TemplateObject? = null
 
+    @KakaoLinkDsl
     fun templateObject(builder: TemplateObjectBuilder.() -> Unit) {
         templateObject = TemplateObjectBuilder().apply(builder).build()
     }
